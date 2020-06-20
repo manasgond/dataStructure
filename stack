@@ -1,0 +1,47 @@
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+// Your code here!
+
+var stack = function(){
+    const store = [];
+    
+    this.push = function(value){
+        store.push(value);
+    }
+    
+    this.pop = function(){
+        const size = store.length;
+        if(size===0) return undefined;
+        store.splice(size-1,1);
+        return store;
+    }
+    
+    this.size = function(){
+        return store.length;
+    }
+    
+    this.peek = function(){
+        const size = store.length;
+        return store[size-1];
+    }
+    
+    this.stackStore = function() { return store; }
+    
+}
+
+const myStack = new stack();
+
+myStack.push(1);
+myStack.push(4);
+myStack.push(2);
+
+console.log(myStack.stackStore());
+console.log(myStack.pop());
+console.log(myStack.peek());
+
+// push
+// pop
+// peek
+// size
+
+try it here @ https://paiza.io/
