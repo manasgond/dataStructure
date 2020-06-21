@@ -1,0 +1,35 @@
+ // que
+ const queue = function(){
+     const store = [];
+     // dequeue
+     this.dequeue = function(){
+         return store.shift();
+     }
+     // enqueue
+     this.enqueue = function(value){
+         store.push(value);
+     }
+     // front
+     this.front = function(){
+         return store[0];
+     }
+     // size
+     this.size = function(){
+         return store.length;
+     }
+     // print
+     this.print = function(){
+         return store;
+     }
+ }
+ 
+ const myQueue = new queue();
+ 
+ myQueue.enqueue("1");
+ myQueue.enqueue("3");
+ myQueue.enqueue("hello");
+ myQueue.dequeue();
+ console.log(myQueue.size());
+ 
+ 
+ console.log(myQueue.print());
